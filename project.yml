@@ -76,6 +76,10 @@ schemes:
       config: Debug
     test:
       config: Debug
+      # Los tests comprueban textos en español: se fija el idioma para que den
+      # el mismo resultado en cualquier Mac (el de GitHub Actions está en inglés).
+      language: es
+      region: ES
       targets:
         - CazaminasTests
         - package: CazaminasCore/CazaminasCoreTests
