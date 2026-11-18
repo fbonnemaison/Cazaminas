@@ -1,0 +1,66 @@
+# Cazaminas — © 2026 App-Zilla. Licencia MIT.
+# Proyecto de Xcode generado con XcodeGen: `xcodegen generate`
+
+name: Cazaminas
+
+options:
+  bundleIdPrefix: com.app-zilla
+  deploymentTarget:
+    macOS: "15.0"
+  developmentLanguage: es
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    # Firma ad hoc: sin cuenta de desarrollador de pago.
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+
+packages:
+  CazaminasCore:
+    path: CazaminasCore
+
+targets:
+  Cazaminas:
+    type: application
+    platform: macOS
+    sources:
+      - App
+    dependencies:
+      - package: CazaminasCore
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Cazaminas
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.puzzle-games
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        NSHumanReadableCopyright: "© 2026 App-Zilla"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.app-zilla.Cazaminas
+        PRODUCT_NAME: Cazaminas
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_HARDENED_RUNTIME: NO
+        ENABLE_APP_SANDBOX: YES
+        GENERATE_INFOPLIST_FILE: NO
+
+schemes:
+  Cazaminas:
+    build:
+      targets:
+        Cazaminas: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - package: CazaminasCore/CazaminasCoreTests
+    archive:
+      config: Release
