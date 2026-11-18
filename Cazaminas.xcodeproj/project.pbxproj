@@ -7,19 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5225547CA7EC9956AA83960C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817798154FDBB557FF3E68D4 /* ContentView.swift */; };
+		1678D6BD3DC1516AAA811DE8 /* SettingsAndFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04EC600B575BCB24753D5C /* SettingsAndFeedbackTests.swift */; };
+		18000B46D6AE3204DA112C5E /* ZoomCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE9D44DF280668570704B4 /* ZoomCommands.swift */; };
+		2FF4512C40E70F033BD6C774 /* Difficulty+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5033E958EACDE21BA990377 /* Difficulty+Display.swift */; };
+		401A8673751C62B40F37D85E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D283B31E31A1859F1060F61 /* AppSettings.swift */; };
+		4B389292A18C197606370B0A /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5694F4EDAB5AADA563DD0FD /* AppServices.swift */; };
+		52AECEA0B0381A4635FAD361 /* FeedbackPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E8ACA13FCE4C33E9B2C514 /* FeedbackPlayer.swift */; };
+		59F480989318DB84A1AC4919 /* BoardInputActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3303B4FC65982CDE47B206 /* BoardInputActions.swift */; };
+		5B428F6E0AAC8F1F52785F2B /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31368E91FEE7121CEB75C1B /* GameViewModelTests.swift */; };
+		5DFFCBC11BEA9F19D105C38A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4961C9CBADB4DB7F6DEC29C8 /* GameViewModel.swift */; };
+		77F616BA032BA3D23ADDE487 /* SoundSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D94B883F9B14B1A6FEDB5 /* SoundSynth.swift */; };
 		814A90C98634CE0B97887BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E739F94824E81C7FCC3824C /* Assets.xcassets */; };
+		847195092B5F0EEB0B9C26AC /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB771055F9631B6B486F666 /* GameEvent.swift */; };
+		8D6AA36D914B2D8AA40E0E5D /* MineSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E92A9364F2A37DA4AA358B /* MineSymbol.swift */; };
+		972BABB769522C5B75BFB2EB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE04ACB0D4289D778380861 /* SettingsView.swift */; };
+		9758A50F34D2433117328B9D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF8EA00F4AB404D85F733A3 /* BoardView.swift */; };
+		99753F48883D2ABCA4B2DAE0 /* BoardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28829A06C749B2B56B8F8 /* BoardTheme.swift */; };
 		9B461D0B73FE1A23FD591E1C /* CazaminasCore in Frameworks */ = {isa = PBXBuildFile; productRef = F7179C58E988A32D55CABC68 /* CazaminasCore */; };
+		9DFE3BD2531A239710B68715 /* CustomBoardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F300985B5F7B991DBBBCCC40 /* CustomBoardSheet.swift */; };
+		A2F4C9ECAD883730B091A50D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EABA0B8805BBDEC2E0C234 /* GameView.swift */; };
+		AC8DD56484BB6F0216AF6042 /* DifficultyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7D5DB5381EF3BF7098C14 /* DifficultyStore.swift */; };
+		B07C7FBFA20160EACC3F27F3 /* StatisticsRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */; };
+		B57858791BFC59191C6DE933 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F215E27E41E899F1E4B0269 /* StatisticsView.swift */; };
+		C52FB743DD2C07104E0C4B36 /* TrackpadHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */; };
+		C7D45432A576822C66664B33 /* GameCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C55C8CC927F1BA4656326 /* GameCommands.swift */; };
+		DE83A3E8D480ABA0C1540CB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4060D2DFED3682F39BFBB5 /* HeaderView.swift */; };
+		DF2A62BA4279707366BE888F /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD26506F745EA8605DBC8530 /* CellView.swift */; };
+		E1F010CFFE7DCF709ECEA7AA /* BoardMouseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A05F10221EBC30DF3E144 /* BoardMouseInput.swift */; };
+		E3935FF959233BFA95DDE9AD /* StatsCategory+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E42755487D536183640FB /* StatsCategory+Display.swift */; };
+		E41BDBC289680DD7300AFC01 /* StatisticsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1313A224E2C9CD44148FA423 /* StatisticsStore.swift */; };
+		EB07FA9D482C6B3F0780F4E1 /* SynthSoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B503BB37A07C185349DBD /* SynthSoundService.swift */; };
 		F8BDDE9AF24368A4663F7B8F /* CazaminasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB045E5518FC8459CA7BB099 /* CazaminasApp.swift */; };
+		FC501BD80A2BE70F37B9B68E /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E480941B4E5EB3243F2A176 /* Effects.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		639FFCD3DA2401B169AEEBED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD76865A646E37187063E5FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50F3C65F2BB0EE6670E08B9F;
+			remoteInfo = Cazaminas;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0CE04ACB0D4289D778380861 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1313A224E2C9CD44148FA423 /* StatisticsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStore.swift; sourceTree = "<group>"; };
 		1E739F94824E81C7FCC3824C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F215E27E41E899F1E4B0269 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		2D283B31E31A1859F1060F61 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		35BCB2595F14609FCBDD9B68 /* CazaminasCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CazaminasCore; path = CazaminasCore; sourceTree = SOURCE_ROOT; };
+		4961C9CBADB4DB7F6DEC29C8 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		4CE7D5DB5381EF3BF7098C14 /* DifficultyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyStore.swift; sourceTree = "<group>"; };
+		527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackpadHaptics.swift; sourceTree = "<group>"; };
 		52B30BB323B074A62D2B1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		817798154FDBB557FF3E68D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		572B503BB37A07C185349DBD /* SynthSoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSoundService.swift; sourceTree = "<group>"; };
+		79F28829A06C749B2B56B8F8 /* BoardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTheme.swift; sourceTree = "<group>"; };
+		7DDE9D44DF280668570704B4 /* ZoomCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCommands.swift; sourceTree = "<group>"; };
+		7E480941B4E5EB3243F2A176 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
 		87EEBF585B8C55D31CC1DA07 /* Cazaminas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cazaminas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		889A05F10221EBC30DF3E144 /* BoardMouseInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMouseInput.swift; sourceTree = "<group>"; };
+		8B3303B4FC65982CDE47B206 /* BoardInputActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInputActions.swift; sourceTree = "<group>"; };
+		8D9C55C8CC927F1BA4656326 /* GameCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCommands.swift; sourceTree = "<group>"; };
+		981E42755487D536183640FB /* StatsCategory+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsCategory+Display.swift"; sourceTree = "<group>"; };
+		9879FE4964F8EE2782713F89 /* CazaminasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CazaminasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43D94B883F9B14B1A6FEDB5 /* SoundSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSynth.swift; sourceTree = "<group>"; };
+		BB04EC600B575BCB24753D5C /* SettingsAndFeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAndFeedbackTests.swift; sourceTree = "<group>"; };
+		C31368E91FEE7121CEB75C1B /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		CAB771055F9631B6B486F666 /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
+		D5694F4EDAB5AADA563DD0FD /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRecordingTests.swift; sourceTree = "<group>"; };
+		D6E8ACA13FCE4C33E9B2C514 /* FeedbackPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPlayer.swift; sourceTree = "<group>"; };
 		DB045E5518FC8459CA7BB099 /* CazaminasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CazaminasApp.swift; sourceTree = "<group>"; };
+		E5033E958EACDE21BA990377 /* Difficulty+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Difficulty+Display.swift"; sourceTree = "<group>"; };
+		E9EABA0B8805BBDEC2E0C234 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F0E92A9364F2A37DA4AA358B /* MineSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSymbol.swift; sourceTree = "<group>"; };
+		F300985B5F7B991DBBBCCC40 /* CustomBoardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoardSheet.swift; sourceTree = "<group>"; };
+		FD26506F745EA8605DBC8530 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		FD4060D2DFED3682F39BFBB5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FDF8EA00F4AB404D85F733A3 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,10 +109,19 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		40B55DE2A89E635852C6586D /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				FDF2F22B8A555E7021D6C6F6 /* macOS */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
 		6462015BD66B5D943C8BFD6E /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				87EEBF585B8C55D31CC1DA07 /* Cazaminas.app */,
+				9879FE4964F8EE2782713F89 /* CazaminasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8700FF94E8564FCB5A77F1DD /* App */,
+				D8B6AF8FF133A00FC2952881 /* AppTests */,
 				20A773D5E11C97AFF62A0CC7 /* Packages */,
 				6462015BD66B5D943C8BFD6E /* Products */,
 			);
@@ -62,12 +139,95 @@
 		8700FF94E8564FCB5A77F1DD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D5694F4EDAB5AADA563DD0FD /* AppServices.swift */,
 				1E739F94824E81C7FCC3824C /* Assets.xcassets */,
 				DB045E5518FC8459CA7BB099 /* CazaminasApp.swift */,
-				817798154FDBB557FF3E68D4 /* ContentView.swift */,
 				52B30BB323B074A62D2B1231 /* Info.plist */,
+				C8187EEE65669816DFBDDEED /* Commands */,
+				8B06F28E513CFA1EC3DCF106 /* Feedback */,
+				BCEC37F5E5A7F8091B27BCE5 /* Game */,
+				40B55DE2A89E635852C6586D /* Platform */,
+				D6CFB4E717B2E6D3151724DC /* Settings */,
+				D7C53CCF7F54FD112D7BCFBB /* Views */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8B06F28E513CFA1EC3DCF106 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D6E8ACA13FCE4C33E9B2C514 /* FeedbackPlayer.swift */,
+				CAB771055F9631B6B486F666 /* GameEvent.swift */,
+				A43D94B883F9B14B1A6FEDB5 /* SoundSynth.swift */,
+				572B503BB37A07C185349DBD /* SynthSoundService.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		BCEC37F5E5A7F8091B27BCE5 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				E5033E958EACDE21BA990377 /* Difficulty+Display.swift */,
+				4CE7D5DB5381EF3BF7098C14 /* DifficultyStore.swift */,
+				4961C9CBADB4DB7F6DEC29C8 /* GameViewModel.swift */,
+				1313A224E2C9CD44148FA423 /* StatisticsStore.swift */,
+				981E42755487D536183640FB /* StatsCategory+Display.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		C8187EEE65669816DFBDDEED /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C55C8CC927F1BA4656326 /* GameCommands.swift */,
+				7DDE9D44DF280668570704B4 /* ZoomCommands.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		D6CFB4E717B2E6D3151724DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2D283B31E31A1859F1060F61 /* AppSettings.swift */,
+				0CE04ACB0D4289D778380861 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D7C53CCF7F54FD112D7BCFBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B3303B4FC65982CDE47B206 /* BoardInputActions.swift */,
+				79F28829A06C749B2B56B8F8 /* BoardTheme.swift */,
+				FDF8EA00F4AB404D85F733A3 /* BoardView.swift */,
+				FD26506F745EA8605DBC8530 /* CellView.swift */,
+				F300985B5F7B991DBBBCCC40 /* CustomBoardSheet.swift */,
+				7E480941B4E5EB3243F2A176 /* Effects.swift */,
+				E9EABA0B8805BBDEC2E0C234 /* GameView.swift */,
+				FD4060D2DFED3682F39BFBB5 /* HeaderView.swift */,
+				F0E92A9364F2A37DA4AA358B /* MineSymbol.swift */,
+				1F215E27E41E899F1E4B0269 /* StatisticsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D8B6AF8FF133A00FC2952881 /* AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C31368E91FEE7121CEB75C1B /* GameViewModelTests.swift */,
+				BB04EC600B575BCB24753D5C /* SettingsAndFeedbackTests.swift */,
+				D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */,
+			);
+			path = AppTests;
+			sourceTree = "<group>";
+		};
+		FDF2F22B8A555E7021D6C6F6 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				889A05F10221EBC30DF3E144 /* BoardMouseInput.swift */,
+				527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +253,24 @@
 			productReference = 87EEBF585B8C55D31CC1DA07 /* Cazaminas.app */;
 			productType = "com.apple.product-type.application";
 		};
+		56E766EE96DBC34727D68F85 /* CazaminasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 030CEDC8BED6A477F06057E5 /* Build configuration list for PBXNativeTarget "CazaminasTests" */;
+			buildPhases = (
+				8C5FEA85393BC8DDA74E726D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30D801BEDD864BAF1AD51CFB /* PBXTargetDependency */,
+			);
+			name = CazaminasTests;
+			packageProductDependencies = (
+			);
+			productName = CazaminasTests;
+			productReference = 9879FE4964F8EE2782713F89 /* CazaminasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -103,6 +281,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					50F3C65F2BB0EE6670E08B9F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					56E766EE96DBC34727D68F85 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Manual;
 					};
@@ -126,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				50F3C65F2BB0EE6670E08B9F /* Cazaminas */,
+				56E766EE96DBC34727D68F85 /* CazaminasTests */,
 			);
 		};
 /* End PBXProject section */
@@ -146,12 +329,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B389292A18C197606370B0A /* AppServices.swift in Sources */,
+				401A8673751C62B40F37D85E /* AppSettings.swift in Sources */,
+				59F480989318DB84A1AC4919 /* BoardInputActions.swift in Sources */,
+				E1F010CFFE7DCF709ECEA7AA /* BoardMouseInput.swift in Sources */,
+				99753F48883D2ABCA4B2DAE0 /* BoardTheme.swift in Sources */,
+				9758A50F34D2433117328B9D /* BoardView.swift in Sources */,
 				F8BDDE9AF24368A4663F7B8F /* CazaminasApp.swift in Sources */,
-				5225547CA7EC9956AA83960C /* ContentView.swift in Sources */,
+				DF2A62BA4279707366BE888F /* CellView.swift in Sources */,
+				9DFE3BD2531A239710B68715 /* CustomBoardSheet.swift in Sources */,
+				2FF4512C40E70F033BD6C774 /* Difficulty+Display.swift in Sources */,
+				AC8DD56484BB6F0216AF6042 /* DifficultyStore.swift in Sources */,
+				FC501BD80A2BE70F37B9B68E /* Effects.swift in Sources */,
+				52AECEA0B0381A4635FAD361 /* FeedbackPlayer.swift in Sources */,
+				C7D45432A576822C66664B33 /* GameCommands.swift in Sources */,
+				847195092B5F0EEB0B9C26AC /* GameEvent.swift in Sources */,
+				A2F4C9ECAD883730B091A50D /* GameView.swift in Sources */,
+				5DFFCBC11BEA9F19D105C38A /* GameViewModel.swift in Sources */,
+				DE83A3E8D480ABA0C1540CB8 /* HeaderView.swift in Sources */,
+				8D6AA36D914B2D8AA40E0E5D /* MineSymbol.swift in Sources */,
+				972BABB769522C5B75BFB2EB /* SettingsView.swift in Sources */,
+				77F616BA032BA3D23ADDE487 /* SoundSynth.swift in Sources */,
+				E41BDBC289680DD7300AFC01 /* StatisticsStore.swift in Sources */,
+				B57858791BFC59191C6DE933 /* StatisticsView.swift in Sources */,
+				E3935FF959233BFA95DDE9AD /* StatsCategory+Display.swift in Sources */,
+				EB07FA9D482C6B3F0780F4E1 /* SynthSoundService.swift in Sources */,
+				C52FB743DD2C07104E0C4B36 /* TrackpadHaptics.swift in Sources */,
+				18000B46D6AE3204DA112C5E /* ZoomCommands.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C5FEA85393BC8DDA74E726D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B428F6E0AAC8F1F52785F2B /* GameViewModelTests.swift in Sources */,
+				1678D6BD3DC1516AAA811DE8 /* SettingsAndFeedbackTests.swift in Sources */,
+				B07C7FBFA20160EACC3F27F3 /* StatisticsRecordingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30D801BEDD864BAF1AD51CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50F3C65F2BB0EE6670E08B9F /* Cazaminas */;
+			targetProxy = 639FFCD3DA2401B169AEEBED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		31F7228D04EDE57C1184F030 /* Debug */ = {
@@ -219,6 +445,23 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		423E8A397F820F8535A5E0C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-zilla.CazaminasTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cazaminas.app/Contents/MacOS/Cazaminas";
 			};
 			name = Debug;
 		};
@@ -323,9 +566,35 @@
 			};
 			name = Release;
 		};
+		C563E6079864CAA176323607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-zilla.CazaminasTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cazaminas.app/Contents/MacOS/Cazaminas";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		030CEDC8BED6A477F06057E5 /* Build configuration list for PBXNativeTarget "CazaminasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				423E8A397F820F8535A5E0C4 /* Debug */,
+				C563E6079864CAA176323607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		81959F6373E53F6FBD03D068 /* Build configuration list for PBXProject "Cazaminas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

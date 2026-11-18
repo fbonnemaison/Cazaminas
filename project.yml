@@ -51,6 +51,18 @@ targets:
         ENABLE_APP_SANDBOX: YES
         GENERATE_INFOPLIST_FILE: NO
 
+  CazaminasTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - AppTests
+    dependencies:
+      - target: Cazaminas
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.app-zilla.CazaminasTests
+        GENERATE_INFOPLIST_FILE: YES
+
 schemes:
   Cazaminas:
     build:
@@ -61,6 +73,7 @@ schemes:
     test:
       config: Debug
       targets:
+        - CazaminasTests
         - package: CazaminasCore/CazaminasCoreTests
     archive:
       config: Release

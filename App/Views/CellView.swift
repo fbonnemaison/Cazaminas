@@ -1,0 +1,147 @@
+// Cazaminas — © 2026 App-Zilla. Licencia MIT.
+
+import SwiftUI
+
+/// Una casilla del tablero. Solo depende de sus propiedades (todas comparables),
+/// así SwiftUI no la vuelve a dibujar si no cambian.
+struct CellView: View, Equatable {
+    let appearance: CellAppearance
+    let size: CGFloat
+    let theme: BoardTheme
+    /// Si se anima el cambio de estado (desactivado con «Reducir movimiento»).
+    var animated: Bool = true
+    /// Retraso de la animación, para la onda de la cascada.
+    var delay: Double = 0
+
+    var body: some View {
+        ZStack {
+            background
+            content
+        }
+        .frame(width: size, height: size)
+        .animation(animated ? .spring(duration: 0.28, bounce: 0.35).delay(delay) : nil, value: appearance)
+    }
+
+    // MARK: - Fondo
+
+    private var isCovered: Bool {
+        switch appearance {
+        case .covered, .flagged, .questioned: true
+        default: false
+        }
+    }
+
+    @ViewBuilder
+    private var background: some View {
+        if isCovered {
+            coveredBackground
+        } else {
+            revealedBackground(appearance == .detonatedMine ? theme.detonated : theme.cellRevealed)
+        }
+    }
+
+    @ViewBuilder
+    private var coveredBackground: some View {
+        switch theme.style {
+        case .raised:
+            RoundedRectangle(cornerRadius: size * 0.16, style: .continuous)
+                .fill(LinearGradient(
+                    colors: [theme.cellCovered, theme.cellCoveredShade],
+                    startPoint: .top,
+                    endPoint: .bottom
+                ))
+                .shadow(color: .black.opacity(0.18), radius: 0.5, y: 0.8)
+                .padding(1)
+        case .flat:
+            RoundedRectangle(cornerRadius: size * 0.2, style: .continuous)
+                .fill(theme.cellCovered)
+                .padding(size * 0.05)
+        case .outlined:
+            Rectangle()
+                .fill(theme.cellCovered)
+                .overlay(Rectangle().strokeBorder(theme.cellGrid, lineWidth: 1.5))
+        }
+    }
+
+    @ViewBuilder
+    private func revealedBackground(_ fill: Color) -> some View {
+        switch theme.style {
+        case .raised:
+            Rectangle()
+                .fill(fill)
+                .overlay(Rectangle().strokeBorder(theme.cellGrid, lineWidth: 0.5))
+        case .flat:
+            RoundedRectangle(cornerRadius: size * 0.2, style: .continuous)
+                .fill(fill)
+                .padding(size * 0.05)
+        case .outlined:
+            Rectangle()
+                .fill(fill)
+                .overlay(Rectangle().strokeBorder(theme.cellGrid, lineWidth: 1))
+        }
+    }
+
+    // MARK: - Contenido
+
+    @ViewBuilder
+    private var content: some View {
+        switch appearance {
+        case .covered, .pressed, .empty:
+            EmptyView()
+        case .number(let number):
+            Text("\(number)")
+                .font(.system(size: size * 0.6, weight: theme.numberWeight, design: .rounded))
+                .foregroundStyle(theme.numberColor(number))
+                .transition(.scale(scale: 0.4).combined(with: .opacity))
+        case .flagged:
+            Image(systemName: "flag.fill")
+                .font(.system(size: size * 0.5))
+                .foregroundStyle(theme.flag)
+                .transition(.scale(scale: 0.3, anchor: .bottom).combined(with: .opacity))
+        case .questioned:
+            Text("?")
+                .font(.system(size: size * 0.58, weight: .bold, design: .rounded))
+                .foregroundStyle(.secondary)
+                .transition(.opacity)
+        case .mine:
+            MineSymbol(color: theme.mine)
+                .padding(size * 0.16)
+                .transition(.scale(scale: 0.2).combined(with: .opacity))
+        case .detonatedMine:
+            MineSymbol(color: theme.mine)
+                .padding(size * 0.16)
+                .transition(.scale(scale: 2.2).combined(with: .opacity))
+        case .wrongFlag:
+            ZStack {
+                MineSymbol(color: theme.mine)
+                    .padding(size * 0.16)
+                    .opacity(0.35)
+                Image(systemName: "xmark")
+                    .font(.system(size: size * 0.6, weight: .bold))
+                    .foregroundStyle(theme.flag)
+            }
+            .transition(.opacity)
+        }
+    }
+}
+
+#Preview {
+    let samples: [CellAppearance] = [
+        .covered, .pressed, .flagged, .questioned, .empty,
+        .number(1), .number(2), .number(3), .number(4),
+        .number(5), .number(6), .number(7), .number(8),
+        .mine, .detonatedMine, .wrongFlag,
+    ]
+    VStack(spacing: 8) {
+        ForEach(ThemeID.allCases) { id in
+            HStack(spacing: 0) {
+                ForEach(Array(samples.enumerated()), id: \.offset) { _, appearance in
+                    CellView(appearance: appearance, size: 28, theme: id.theme)
+                }
+            }
+            .padding(4)
+            .background(id.theme.boardBackground)
+        }
+    }
+    .padding()
+}

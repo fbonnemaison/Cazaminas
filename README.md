@@ -8,8 +8,14 @@ Juego de lógica para un jugador para macOS: despeja una cuadrícula de casillas
 
 - **El primer clic es seguro:** nunca contiene una mina y suele abrir un área amplia.
 - **Números:** cada número (1–8) indica cuántas minas hay en las 8 casillas que lo rodean, diagonales incluidas.
-- **Banderas:** clic derecho (o Control-clic) para marcar una casilla donde deduces que hay una mina.
+- **Banderas:** clic derecho (o Control-clic) para marcar una casilla donde deduces que hay una mina. Un segundo clic la cambia por «?».
+- **Chording:** clic (o clic central) sobre un número que ya tiene todas sus banderas alrededor destapa el resto de sus vecinas.
+- **Nueva partida:** botón central o ⌘N.
+- **Dificultad:** menú «Juego» › Principiante (⌘1), Intermedio (⌘2), Experto (⌘3) o Personalizado… (⌘4). Se recuerda la última elegida.
 - **Victoria:** abre todas las casillas seguras del tablero, en el menor tiempo posible.
+- **Ajustes (⌘,):** marca «?», sonido, respuesta háptica (trackpad Force Touch), tema (Relieve, Plano, Alto contraste) y tamaño de casilla.
+- **Zoom:** menú «Visualización» › Ampliar (⌘+), Reducir (⌘−) o Tamaño normal (⌘0).
+- **Estadísticas:** menú «Juego» › Estadísticas… (⌘⇧S): partidas, % de victorias, rachas y los 10 mejores tiempos de cada nivel. Abandonar una partida empezada cuenta como derrota.
 
 ## Requisitos
 
@@ -21,7 +27,9 @@ Juego de lógica para un jugador para macOS: despeja una cuadrícula de casillas
 | Carpeta | Contenido |
 | --- | --- |
 | `CazaminasCore/` | Paquete Swift con la lógica del juego, sin interfaz (macOS e iOS). |
-| `App/` | App de macOS en SwiftUI. |
+| `App/` | App de macOS en SwiftUI. El código exclusivo de Mac vive en `App/Platform/macOS/`. |
+| `AppTests/` | Tests de la capa de presentación (`GameViewModel`). |
+| `Tools/AppIcon/` | Script que dibuja el icono de la app: `swift Tools/AppIcon/make-icon.swift App/Assets.xcassets/AppIcon.appiconset`. |
 | `project.yml` | Definición del proyecto de Xcode para XcodeGen. |
 
 ## Compilar

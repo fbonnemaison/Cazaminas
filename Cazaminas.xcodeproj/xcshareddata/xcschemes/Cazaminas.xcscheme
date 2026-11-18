@@ -44,6 +44,17 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "56E766EE96DBC34727D68F85"
+               BuildableName = "CazaminasTests.xctest"
+               BlueprintName = "CazaminasTests"
+               ReferencedContainer = "container:Cazaminas.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CazaminasCoreTests"
                BuildableName = "CazaminasCoreTests"
                BlueprintName = "CazaminasCoreTests"

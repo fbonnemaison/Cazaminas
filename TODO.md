@@ -61,41 +61,43 @@ Para que añadir iOS más adelante sea añadir un destino y no reescribir la app
 
 ## Fase 2 — Interfaz básica (SwiftUI)
 
-- [ ] `GameViewModel` (`@Observable`) que conecta el motor con la UI.
-- [ ] Vista del tablero (`Grid`/`LazyVGrid` o `Canvas` para tableros grandes).
-- [ ] Vista de casilla: estados oculta, revelada, número coloreado, bandera, «?», mina, mina detonada, bandera errónea.
-- [ ] Interacción: clic izquierdo = revelar; clic derecho y Control-clic = marcar; clic sobre número = chording.
-- [ ] Barra superior: contador de minas, botón de reinicio (cara/estado), cronómetro.
-- [ ] Cronómetro que arranca con el primer clic y se detiene al terminar.
-- [ ] Ventana que se ajusta al tamaño del tablero.
-- [ ] Mensajes de victoria/derrota.
+- [x] `GameViewModel` (`@Observable`) que conecta el motor con la UI (con tests en `AppTests`).
+- [x] Vista del tablero (filas de `CellView` equatable; valorar `Canvas` si Experto va lento).
+- [x] Vista de casilla: estados oculta, revelada, número coloreado, bandera, «?», mina, mina detonada, bandera errónea.
+- [x] Interacción: clic izquierdo = revelar (al soltar); clic derecho y Control-clic = marcar; clic sobre número o clic central = chording.
+- [x] Barra superior: contador de minas, botón de reinicio con estado (⌘N), cronómetro.
+- [x] Cronómetro que arranca con el primer clic y se detiene al terminar (máx. 999).
+- [x] Ventana única que se ajusta al tamaño del tablero.
+- [x] Mensajes de victoria/derrota.
 
 ## Fase 3 — Dificultades y tablero personalizado
 
-- [ ] Principiante: 9×9, 10 minas.
-- [ ] Intermedio: 16×16, 40 minas.
-- [ ] Experto: 30×16, 99 minas.
-- [ ] Personalizado: ancho, alto y minas con validación (límites razonables, minas < casillas − 9).
-- [ ] Menú «Juego» en la barra de menús con atajos (⌘N nueva partida, ⌘1/⌘2/⌘3 dificultades).
-- [ ] Recordar la última dificultad usada.
+- [x] Principiante: 9×9, 10 minas.
+- [x] Intermedio: 16×16, 40 minas.
+- [x] Experto: 30×16, 99 minas.
+- [x] Personalizado: ancho 5–40, alto 5–24, minas hasta casillas − 9 (validado en `CustomBoardLimits`).
+- [x] Menú «Juego» en la barra de menús con atajos (⌘N nueva partida, ⌘1/⌘2/⌘3 dificultades, ⌘4 personalizado).
+- [x] Recordar la última dificultad usada (UserDefaults).
+- [x] Subtítulo de la ventana con la dificultad actual.
 
 ## Fase 4 — Récords y estadísticas
 
-- [ ] Persistencia local (SwiftData o JSON en Application Support).
-- [ ] Mejor tiempo por dificultad (top 10 con fecha).
-- [ ] Estadísticas: partidas jugadas, ganadas, % de victorias, racha actual y máxima.
-- [ ] Ventana/hoja de estadísticas y opción de reiniciarlas.
-- [ ] Aviso de nuevo récord al ganar.
+- [x] Persistencia local en JSON (Application Support/Cazaminas/statistics.json), portable a iOS.
+- [x] Mejor tiempo por dificultad (top 10 con fecha, décimas de segundo). Los tableros personalizados no tienen tabla.
+- [x] Estadísticas: partidas jugadas, ganadas, % de victorias, racha actual y máxima.
+- [x] Una partida empezada y abandonada (nueva partida o cambio de nivel) cuenta como derrota.
+- [x] Ventana de estadísticas (⌘⇧S) con restablecimiento por nivel o total, con confirmación.
+- [x] Aviso de nuevo récord (o puesto en la tabla) al ganar.
 
 ## Fase 5 — Ajustes, sonido, háptica y temas
 
-- [ ] Ventana de Ajustes (`Settings` scene): activar «?», sonido, háptica, tema.
-- [ ] Efectos de sonido originales (revelar, bandera, explosión, victoria) con `AVAudioPlayer`.
-- [ ] Respuesta háptica en trackpad Force Touch (`NSHapticFeedbackManager`) al marcar y al perder.
-- [ ] Modo claro/oscuro siguiendo el sistema.
-- [ ] Temas visuales seleccionables (p. ej. clásico, moderno plano, alto contraste).
-- [ ] Animaciones: revelado en cascada, explosión, celebración al ganar (respetando «Reducir movimiento»).
-- [ ] Zoom del tablero (tamaño de casilla ajustable, ⌘+ / ⌘−).
+- [x] Ventana de Ajustes (`Settings`, ⌘,): marca «?», sonido, háptica, tema y tamaño de casilla.
+- [x] Efectos de sonido originales sintetizados al vuelo (`SoundSynth` + `AVAudioEngine`), sin archivos de audio.
+- [x] Respuesta háptica en trackpad Force Touch (`NSHapticFeedbackManager`) al marcar, perder y ganar.
+- [x] Modo claro/oscuro siguiendo el sistema (todos los colores tienen las dos variantes).
+- [x] Temas visuales seleccionables: Relieve, Plano y Alto contraste.
+- [x] Animaciones: onda de revelado en cascada, cadena de minas y sacudida al perder, confeti al ganar (respetan «Reducir movimiento»).
+- [x] Zoom del tablero (20–44 pt; ⌘+ / ⌘− / ⌘0 en el menú Visualización).
 
 ## Fase 6 — Modo «sin adivinar»
 
@@ -112,7 +114,7 @@ Para que añadir iOS más adelante sea añadir un destino y no reescribir la app
 - [ ] Control completo por teclado (flechas, Espacio = revelar, F = bandera, Intro = chording).
 - [ ] Colores de números con contraste suficiente y no depender solo del color.
 - [ ] Localización: español (base) e inglés con String Catalog.
-- [ ] Icono de la app original.
+- [x] Icono de la app original (generado con `Tools/AppIcon/make-icon.swift`).
 - [ ] Pausa al minimizar / perder foco (ocultando el tablero).
 
 ## Fase 8 — Distribución
