@@ -8,5 +8,5 @@ import Foundation
 /// Espacio de nombres del motor de Cazaminas.
 public enum CazaminasCore {
     /// Versión del motor del juego.
-    public static let version = "0.1.0"
+    public static let version = "1.0.0"
 }

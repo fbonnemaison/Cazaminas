@@ -119,13 +119,13 @@ Para que añadir iOS más adelante sea añadir un destino y no reescribir la app
 
 ## Fase 8 — Distribución
 
-- [ ] Script de build de Release con firma ad hoc (`codesign --force --deep -s -`).
-- [ ] Empaquetado `.zip` o `.dmg`.
-- [ ] GitHub Actions: tests en cada push y release al crear un tag.
-- [ ] README completo: capturas, instalación y cómo abrir la app sin notarizar la primera vez
+- [x] Script de build de Release (`Tools/Release/build-release.sh`): app universal (Apple Silicon e Intel) con firma ad hoc y verificación de la firma.
+- [x] Empaquetado `.dmg` (con acceso a Aplicaciones) y `.zip`, más `SHA256SUMS.txt`.
+- [x] GitHub Actions: tests en cada push/PR (`ci.yml`) y release al crear un tag `v*` (`release.yml`).
+- [x] README completo: capturas, instalación, atajos y cómo abrir la app sin notarizar la primera vez
       (Ajustes del Sistema › Privacidad y seguridad › «Abrir igualmente»).
-- [ ] `CHANGELOG.md` (autor App-Zilla).
-- [ ] Publicar v1.0.0.
+- [x] `CHANGELOG.md` (autor App-Zilla).
+- [x] Publicar v1.0.0: repositorio en GitHub, `main` y tag `v1.0.0`.
 
 ## Fase 9 — iOS / iPadOS (etapa muy posterior)
 

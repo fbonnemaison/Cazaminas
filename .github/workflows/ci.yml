@@ -1,0 +1,41 @@
+# Cazaminas — © 2026 App-Zilla. Licencia MIT.
+# Tests en cada push y pull request.
+
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Seleccionar Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Tests del motor (CazaminasCore)
+        run: swift test --package-path CazaminasCore
+
+      - name: Tests de la app
+        run: |
+          xcodebuild test \
+            -project Cazaminas.xcodeproj \
+            -scheme Cazaminas \
+            -destination 'platform=macOS' \
+            CODE_SIGN_IDENTITY=- \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=""
+
+      - name: Contraste de los temas
+        run: python3 Tools/Contrast/check-contrast.py
