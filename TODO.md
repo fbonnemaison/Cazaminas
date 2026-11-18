@@ -101,21 +101,21 @@ Para que añadir iOS más adelante sea añadir un destino y no reescribir la app
 
 ## Fase 6 — Modo «sin adivinar»
 
-- [ ] Solucionador lógico en `CazaminasCore` (reglas simples + análisis de restricciones entre números vecinos).
-- [ ] Generador que repite/ajusta tableros hasta que el solucionador los resuelve desde el primer clic sin azar.
-- [ ] Límite de intentos y tiempo con fallback razonable; generación en segundo plano (sin bloquear la UI).
-- [ ] Tests: todo tablero generado en este modo es resoluble por el solucionador.
-- [ ] Opción en Ajustes y récords separados para este modo.
-- [ ] (Opcional) Botón de pista que usa el solucionador.
+- [x] Solucionador lógico en `CazaminasCore`: reglas simples, subconjuntos, enumeración de grupos de frontera y recuento global de minas.
+- [x] Generador que prueba tableros (deterministas por semilla) hasta que el solucionador los resuelve desde el primer clic.
+- [x] Límite de intentos (3000) y de tiempo (5 s); si no hay tablero posible (muy denso) se juega uno clásico y se avisa. Generación en segundo plano.
+- [x] Tests: los tableros generados son resolubles; las pistas nunca llevan a perder. Medido: Experto tarda de mediana 7 ms y como máximo 75 ms.
+- [x] Opción en Ajustes y en el menú (⌘G), con estadísticas y récords separados por modo.
+- [x] Botón de pista (⌘J): resalta una casilla segura (verde) o una mina (naranja); ganar con pistas no entra en la tabla de récords.
 
 ## Fase 7 — Accesibilidad y pulido
 
-- [ ] VoiceOver: etiquetas por casilla («fila 3, columna 5, 2 minas cerca»).
-- [ ] Control completo por teclado (flechas, Espacio = revelar, F = bandera, Intro = chording).
-- [ ] Colores de números con contraste suficiente y no depender solo del color.
-- [ ] Localización: español (base) e inglés con String Catalog.
+- [x] VoiceOver: cada casilla es un botón con descripción («Fila 3, columna 5: 2 minas cerca»), acción principal y acción «Marcar»; avisos al ganar/perder; contadores con etiqueta.
+- [x] Control completo por teclado: flechas mueven el cursor, Espacio destapa, F marca, Intro hace chording.
+- [x] Contraste de los números ≥ 4,5:1 (WCAG AA) en todos los temas, claro y oscuro (`Tools/Contrast/check-contrast.py`). La pista de mina es discontinua para no depender solo del color.
+- [x] Localización: español (base) e inglés con String Catalog (`App/Localizable.xcstrings`).
 - [x] Icono de la app original (generado con `Tools/AppIcon/make-icon.swift`).
-- [ ] Pausa al minimizar / perder foco (ocultando el tablero).
+- [x] Pausa al cambiar de app o minimizar (y manual con ⌘P), ocultando el tablero; el tiempo en pausa no cuenta.
 
 ## Fase 8 — Distribución
 

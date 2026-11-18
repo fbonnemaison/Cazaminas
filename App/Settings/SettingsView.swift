@@ -13,6 +13,10 @@ struct SettingsView: View {
                 Text("Con la marca activada, el clic derecho alterna entre bandera, «?» y sin marca.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                Toggle("Tableros sin adivinar", isOn: $settings.noGuessMode)
+                Text("Cada tablero se puede resolver solo con lógica desde el primer clic. Se aplica a la siguiente partida y tiene sus propios récords.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
 
             Section("Sonido y respuesta háptica") {

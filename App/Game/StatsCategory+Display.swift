@@ -19,3 +19,12 @@ func formattedSeconds(_ seconds: Double) -> String {
     let value = seconds.formatted(.number.precision(.fractionLength(1)))
     return String(localized: "\(value) s")
 }
+
+extension GameMode {
+    var title: String {
+        switch self {
+        case .classic: String(localized: "Clásico")
+        case .noGuess: String(localized: "Sin adivinar")
+        }
+    }
+}

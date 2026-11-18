@@ -1,0 +1,941 @@
+{
+  "sourceLanguage": "es",
+  "strings": {
+    "%@ s": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ s"
+          }
+        }
+      }
+    },
+    "%lld": {
+      "shouldTranslate": false
+    },
+    "%lld minas cerca": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mines nearby"
+          }
+        }
+      }
+    },
+    "%lld pt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pt"
+          }
+        }
+      }
+    },
+    "%lld × %lld · %lld minas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld × %lld · %lld mines"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld × %2$lld · %3$lld minas"
+          }
+        }
+      }
+    },
+    "%lld.": {
+      "shouldTranslate": false
+    },
+    "%lld–%lld": {
+      "shouldTranslate": false
+    },
+    ", pista: mina": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", hint: mine"
+          }
+        }
+      }
+    },
+    ", pista: segura": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", hint: safe"
+          }
+        }
+      }
+    },
+    "1 mina cerca": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 mine nearby"
+          }
+        }
+      }
+    },
+    "?": {
+      "shouldTranslate": false
+    },
+    "Alto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Height"
+          }
+        }
+      }
+    },
+    "Alto contraste": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High Contrast"
+          }
+        }
+      }
+    },
+    "Ampliar tablero": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoom In"
+          }
+        }
+      }
+    },
+    "Ancho": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Width"
+          }
+        }
+      }
+    },
+    "Apariencia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appearance"
+          }
+        }
+      }
+    },
+    "Aún no hay victorias en este nivel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No wins at this level yet."
+          }
+        }
+      }
+    },
+    "Cada tablero se puede resolver solo con lógica desde el primer clic. Se aplica a la siguiente partida y tiene sus propios récords.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every board can be solved with logic alone from the first click. Applies to the next game and keeps its own records."
+          }
+        }
+      }
+    },
+    "Cancelar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "Cazaminas": {
+      "shouldTranslate": false
+    },
+    "Clic: destapar · Clic derecho: bandera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click: reveal · Right-click: flag"
+          }
+        }
+      }
+    },
+    "Clásico": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Classic"
+          }
+        }
+      }
+    },
+    "Con la marca activada, el clic derecho alterna entre bandera, «?» y sin marca.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When on, right-click cycles between flag, “?” and no mark."
+          }
+        }
+      }
+    },
+    "Continuar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume"
+          }
+        }
+      }
+    },
+    "Densidad: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Density: %@"
+          }
+        }
+      }
+    },
+    "Dificultad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Difficulty"
+          }
+        }
+      }
+    },
+    "Efectos de sonido": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound effects"
+          }
+        }
+      }
+    },
+    "El modo claro u oscuro sigue al del sistema.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light or dark mode follows the system setting."
+          }
+        }
+      }
+    },
+    "En pausa": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused"
+          }
+        }
+      }
+    },
+    "Estadísticas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistics"
+          }
+        }
+      }
+    },
+    "Estadísticas…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistics…"
+          }
+        }
+      }
+    },
+    "Experto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expert"
+          }
+        }
+      }
+    },
+    "Fila %lld, columna %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Row %lld, column %lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Fila %1$lld, columna %2$lld"
+          }
+        }
+      }
+    },
+    "Ganadas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Won"
+          }
+        }
+      }
+    },
+    "Generando tablero sin adivinar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generating a no-guess board…"
+          }
+        }
+      }
+    },
+    "Haz clic o pulsa ⌘P para continuar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click or press ⌘P to resume"
+          }
+        }
+      }
+    },
+    "Intermedio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intermediate"
+          }
+        }
+      }
+    },
+    "Juego": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Game"
+          }
+        }
+      }
+    },
+    "Jugadas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Played"
+          }
+        }
+      }
+    },
+    "Jugar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        }
+      }
+    },
+    "La respuesta háptica se nota en trackpads Force Touch con el dedo apoyado.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptic feedback is felt on Force Touch trackpads while your finger rests on them."
+          }
+        }
+      }
+    },
+    "Los tableros personalizados no tienen tabla de tiempos porque cada uno puede tener medidas distintas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom boards have no best-times table because each one can have different dimensions."
+          }
+        }
+      }
+    },
+    "Marca de interrogación «?»": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Question mark “?”"
+          }
+        }
+      }
+    },
+    "Marcar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark"
+          }
+        }
+      }
+    },
+    "Mejor racha": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best streak"
+          }
+        }
+      }
+    },
+    "Mejor tiempo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best time"
+          }
+        }
+      }
+    },
+    "Mejores tiempos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best times"
+          }
+        }
+      }
+    },
+    "Minas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mines"
+          }
+        }
+      }
+    },
+    "Minas restantes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mines left"
+          }
+        }
+      }
+    },
+    "Minas restantes: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mines left: %lld"
+          }
+        }
+      }
+    },
+    "Modo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode"
+          }
+        }
+      }
+    },
+    "No hay jugada segura: toca arriesgarse.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No safe move: time to take a chance."
+          }
+        }
+      }
+    },
+    "Nueva partida": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Game"
+          }
+        }
+      }
+    },
+    "Nueva partida (⌘N)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Game (⌘N)"
+          }
+        }
+      }
+    },
+    "Pausar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        }
+      }
+    },
+    "Personalizado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        }
+      }
+    },
+    "Personalizado…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom…"
+          }
+        }
+      }
+    },
+    "Pista": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hint"
+          }
+        }
+      }
+    },
+    "Plano": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flat"
+          }
+        }
+      }
+    },
+    "Principiante": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beginner"
+          }
+        }
+      }
+    },
+    "Racha actual": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current streak"
+          }
+        }
+      }
+    },
+    "Reducir tablero": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoom Out"
+          }
+        }
+      }
+    },
+    "Relieve": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relief"
+          }
+        }
+      }
+    },
+    "Respuesta háptica": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptic feedback"
+          }
+        }
+      }
+    },
+    "Restablecer…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset…"
+          }
+        }
+      }
+    },
+    "Se borrarán partidas, rachas y mejores tiempos. No se puede deshacer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Games, streaks and best times will be erased. This can’t be undone."
+          }
+        }
+      }
+    },
+    "Sin adivinar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Guessing"
+          }
+        }
+      }
+    },
+    "Solo %@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only %@ · %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Solo %1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "Sonido y respuesta háptica": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound and haptics"
+          }
+        }
+      }
+    },
+    "Tablero de %lld por %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld by %lld board"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Tablero de %1$lld por %2$lld"
+          }
+        }
+      }
+    },
+    "Tablero demasiado denso: puede tocar adivinar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Board too dense: you may have to guess."
+          }
+        }
+      }
+    },
+    "Tablero personalizado": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom Board"
+          }
+        }
+      }
+    },
+    "Tableros sin adivinar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No-guess boards"
+          }
+        }
+      }
+    },
+    "Tamaño de casilla": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cell size"
+          }
+        }
+      }
+    },
+    "Tamaño normal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actual Size"
+          }
+        }
+      }
+    },
+    "Tema": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theme"
+          }
+        }
+      }
+    },
+    "Tiempo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time"
+          }
+        }
+      }
+    },
+    "Tiempo: %lld segundos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time: %lld seconds"
+          }
+        }
+      }
+    },
+    "Todas las dificultades": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All difficulties"
+          }
+        }
+      }
+    },
+    "Victorias": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Win rate"
+          }
+        }
+      }
+    },
+    "bandera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "flagged"
+          }
+        }
+      }
+    },
+    "bandera incorrecta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "wrong flag"
+          }
+        }
+      }
+    },
+    "interrogación": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "question mark"
+          }
+        }
+      }
+    },
+    "mina": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mine"
+          }
+        }
+      }
+    },
+    "mina detonada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "detonated mine"
+          }
+        }
+      }
+    },
+    "tapada": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "covered"
+          }
+        }
+      }
+    },
+    "vacía": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "empty"
+          }
+        }
+      }
+    },
+    "¡Boom! Has pisado una mina.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boom! You hit a mine."
+          }
+        }
+      }
+    },
+    "¡Despejado en %@!": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cleared in %@!"
+          }
+        }
+      }
+    },
+    "¡Despejado en %@! (con pistas)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cleared in %@! (with hints)"
+          }
+        }
+      }
+    },
+    "¡Despejado en %@! (n.º %lld)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cleared in %@! (#%lld)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "¡Despejado en %1$@! (n.º %2$lld)"
+          }
+        }
+      }
+    },
+    "¡Nuevo récord: %@!": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New record: %@!"
+          }
+        }
+      }
+    },
+    "¡Tablero despejado!": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Board cleared!"
+          }
+        }
+      }
+    },
+    "¿Restablecer las estadísticas?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset statistics?"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

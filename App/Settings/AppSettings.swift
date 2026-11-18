@@ -17,11 +17,17 @@ final class AppSettings {
         static let hapticsEnabled = "hapticsEnabled"
         static let theme = "theme"
         static let cellSize = "cellSize"
+        static let noGuessMode = "noGuessMode"
     }
 
     /// Si el clic derecho pasa por «?» después de la bandera.
     var allowsQuestionMarks: Bool {
         didSet { defaults?.set(allowsQuestionMarks, forKey: Key.allowsQuestionMarks) }
+    }
+
+    /// Si las partidas nuevas usan tableros resolubles sin adivinar.
+    var noGuessMode: Bool {
+        didSet { defaults?.set(noGuessMode, forKey: Key.noGuessMode) }
     }
 
     var soundEnabled: Bool {
@@ -47,6 +53,7 @@ final class AppSettings {
     init(defaults: UserDefaults? = nil) {
         self.defaults = defaults
         allowsQuestionMarks = defaults?.object(forKey: Key.allowsQuestionMarks) as? Bool ?? true
+        noGuessMode = defaults?.object(forKey: Key.noGuessMode) as? Bool ?? false
         soundEnabled = defaults?.object(forKey: Key.soundEnabled) as? Bool ?? true
         hapticsEnabled = defaults?.object(forKey: Key.hapticsEnabled) as? Bool ?? true
         theme = defaults?.string(forKey: Key.theme).flatMap(ThemeID.init(rawValue:)) ?? .relief

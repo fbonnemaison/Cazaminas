@@ -117,3 +117,57 @@ struct StatisticsTests {
         #expect(try JSONDecoder().decode(Statistics.self, from: data) == statistics)
     }
 }
+
+@Suite("Estadísticas por modo")
+struct StatisticsModeTests {
+    let date = Date(timeIntervalSinceReferenceDate: 800_000_000)
+
+    @Test("Clásico y sin adivinar llevan estadísticas separadas")
+    func separateModes() {
+        var statistics = Statistics()
+        statistics.recordWin(in: .beginner, mode: .noGuess, seconds: 20, date: date)
+        statistics.recordLoss(in: .beginner)
+        #expect(statistics[.beginner, .noGuess].won == 1)
+        #expect(statistics[.beginner, .noGuess].bestTimes.count == 1)
+        #expect(statistics[.beginner].won == 0)
+        #expect(statistics[.beginner].played == 1)
+    }
+
+    @Test("Una victoria con ayuda cuenta, pero no entra en la tabla de tiempos")
+    func assistedWin() {
+        var statistics = Statistics()
+        let outcome = statistics.recordWin(in: .expert, seconds: 50, date: date, countsForBestTimes: false)
+        #expect(outcome.rank == nil)
+        #expect(statistics[.expert].won == 1)
+        #expect(statistics[.expert].bestTimes.isEmpty)
+    }
+
+    @Test("Restablecer por modo deja el otro intacto")
+    func resetByMode() {
+        var statistics = Statistics()
+        statistics.recordWin(in: .beginner, seconds: 10, date: date)
+        statistics.recordWin(in: .beginner, mode: .noGuess, seconds: 10, date: date)
+        statistics.reset(.beginner, mode: .noGuess)
+        #expect(statistics[.beginner].won == 1)
+        #expect(statistics[.beginner, .noGuess].played == 0)
+        statistics.reset()
+        #expect(statistics.isEmpty)
+    }
+
+    @Test("Los archivos de la versión anterior (sin modos) se siguen leyendo")
+    func legacyFile() throws {
+        let json = #"{"categories":{"beginner":{"played":3,"won":2,"currentStreak":1,"bestStreak":2,"bestTimes":[]}}}"#
+        let statistics = try JSONDecoder().decode(Statistics.self, from: Data(json.utf8))
+        #expect(statistics[.beginner].played == 3)
+        #expect(statistics[.beginner, .noGuess].played == 0)
+    }
+
+    @Test("Los dos modos se guardan y recuperan")
+    func roundTrip() throws {
+        var statistics = Statistics()
+        statistics.recordWin(in: .intermediate, mode: .noGuess, seconds: 33, date: date)
+        statistics.recordLoss(in: .expert)
+        let decoded = try JSONDecoder().decode(Statistics.self, from: JSONEncoder().encode(statistics))
+        #expect(decoded == statistics)
+    }
+}

@@ -1,5 +1,6 @@
 // Cazaminas — © 2026 App-Zilla. Licencia MIT.
 
+import CazaminasCore
 import SwiftUI
 
 /// Una casilla del tablero. Solo depende de sus propiedades (todas comparables),
@@ -12,11 +13,23 @@ struct CellView: View, Equatable {
     var animated: Bool = true
     /// Retraso de la animación, para la onda de la cascada.
     var delay: Double = 0
+    /// Pista sobre esta casilla: segura (verde) o mina (naranja).
+    var hint: Hint.Kind? = nil
+    /// Si el cursor del teclado está sobre esta casilla.
+    var isCursor: Bool = false
 
     var body: some View {
         ZStack {
             background
             content
+            if let hint {
+                HintMarker(kind: hint, size: size, animated: animated)
+            }
+            if isCursor {
+                RoundedRectangle(cornerRadius: size * 0.18, style: .continuous)
+                    .strokeBorder(Color.accentColor, lineWidth: max(2, size * 0.09))
+                    .allowsHitTesting(false)
+            }
         }
         .frame(width: size, height: size)
         .animation(animated ? .spring(duration: 0.28, bounce: 0.35).delay(delay) : nil, value: appearance)
@@ -122,6 +135,31 @@ struct CellView: View, Equatable {
             }
             .transition(.opacity)
         }
+    }
+}
+
+/// Marco que parpadea suavemente sobre la casilla de la pista.
+private struct HintMarker: View {
+    let kind: Hint.Kind
+    let size: CGFloat
+    let animated: Bool
+
+    var body: some View {
+        let shape = RoundedRectangle(cornerRadius: size * 0.2, style: .continuous)
+        let color: Color = kind == .safe ? .green : .orange
+        let style = StrokeStyle(lineWidth: max(2, size * 0.1), dash: kind == .mine ? [size * 0.18, size * 0.1] : [])
+        Group {
+            if animated {
+                shape.strokeBorder(color, style: style)
+                    .phaseAnimator([1.0, 0.35]) { view, opacity in
+                        view.opacity(opacity)
+                    } animation: { _ in .easeInOut(duration: 0.6) }
+            } else {
+                shape.strokeBorder(color, style: style)
+            }
+        }
+        .padding(1)
+        .allowsHitTesting(false)
     }
 }
 

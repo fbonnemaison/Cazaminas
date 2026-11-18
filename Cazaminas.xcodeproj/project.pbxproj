@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1678D6BD3DC1516AAA811DE8 /* SettingsAndFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04EC600B575BCB24753D5C /* SettingsAndFeedbackTests.swift */; };
 		18000B46D6AE3204DA112C5E /* ZoomCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE9D44DF280668570704B4 /* ZoomCommands.swift */; };
+		1C8BF52DE208E5224DB19C60 /* PauseOnDeactivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECF65A1304C961F8DA0AAF /* PauseOnDeactivate.swift */; };
 		2FF4512C40E70F033BD6C774 /* Difficulty+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5033E958EACDE21BA990377 /* Difficulty+Display.swift */; };
 		401A8673751C62B40F37D85E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D283B31E31A1859F1060F61 /* AppSettings.swift */; };
 		4B389292A18C197606370B0A /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5694F4EDAB5AADA563DD0FD /* AppServices.swift */; };
@@ -28,7 +29,10 @@
 		A2F4C9ECAD883730B091A50D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EABA0B8805BBDEC2E0C234 /* GameView.swift */; };
 		AC8DD56484BB6F0216AF6042 /* DifficultyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7D5DB5381EF3BF7098C14 /* DifficultyStore.swift */; };
 		B07C7FBFA20160EACC3F27F3 /* StatisticsRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */; };
+		B35E67A98B1808FF6C06A2F7 /* NoGuessModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EBE8E702EFF273E060ADA /* NoGuessModeTests.swift */; };
 		B57858791BFC59191C6DE933 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F215E27E41E899F1E4B0269 /* StatisticsView.swift */; };
+		C2732ACEFD46076D92CAA0D4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 60798441FF18C0B358673A28 /* Localizable.xcstrings */; };
+		C41FCAA8B6B3F39587E09077 /* PauseKeyboardAccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C1E74D7E46C4FAE45FDBFB /* PauseKeyboardAccessibilityTests.swift */; };
 		C52FB743DD2C07104E0C4B36 /* TrackpadHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */; };
 		C7D45432A576822C66664B33 /* GameCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C55C8CC927F1BA4656326 /* GameCommands.swift */; };
 		DE83A3E8D480ABA0C1540CB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4060D2DFED3682F39BFBB5 /* HeaderView.swift */; };
@@ -58,11 +62,13 @@
 		1F215E27E41E899F1E4B0269 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		2D283B31E31A1859F1060F61 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		35BCB2595F14609FCBDD9B68 /* CazaminasCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CazaminasCore; path = CazaminasCore; sourceTree = SOURCE_ROOT; };
+		38ECF65A1304C961F8DA0AAF /* PauseOnDeactivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseOnDeactivate.swift; sourceTree = "<group>"; };
 		4961C9CBADB4DB7F6DEC29C8 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		4CE7D5DB5381EF3BF7098C14 /* DifficultyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyStore.swift; sourceTree = "<group>"; };
 		527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackpadHaptics.swift; sourceTree = "<group>"; };
 		52B30BB323B074A62D2B1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		572B503BB37A07C185349DBD /* SynthSoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthSoundService.swift; sourceTree = "<group>"; };
+		60798441FF18C0B358673A28 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		79F28829A06C749B2B56B8F8 /* BoardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTheme.swift; sourceTree = "<group>"; };
 		7DDE9D44DF280668570704B4 /* ZoomCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomCommands.swift; sourceTree = "<group>"; };
 		7E480941B4E5EB3243F2A176 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
@@ -79,7 +85,9 @@
 		D5694F4EDAB5AADA563DD0FD /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRecordingTests.swift; sourceTree = "<group>"; };
 		D6E8ACA13FCE4C33E9B2C514 /* FeedbackPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPlayer.swift; sourceTree = "<group>"; };
+		D8C1E74D7E46C4FAE45FDBFB /* PauseKeyboardAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseKeyboardAccessibilityTests.swift; sourceTree = "<group>"; };
 		DB045E5518FC8459CA7BB099 /* CazaminasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CazaminasApp.swift; sourceTree = "<group>"; };
+		DC8EBE8E702EFF273E060ADA /* NoGuessModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGuessModeTests.swift; sourceTree = "<group>"; };
 		E5033E958EACDE21BA990377 /* Difficulty+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Difficulty+Display.swift"; sourceTree = "<group>"; };
 		E9EABA0B8805BBDEC2E0C234 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		F0E92A9364F2A37DA4AA358B /* MineSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSymbol.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 				1E739F94824E81C7FCC3824C /* Assets.xcassets */,
 				DB045E5518FC8459CA7BB099 /* CazaminasApp.swift */,
 				52B30BB323B074A62D2B1231 /* Info.plist */,
+				60798441FF18C0B358673A28 /* Localizable.xcstrings */,
 				C8187EEE65669816DFBDDEED /* Commands */,
 				8B06F28E513CFA1EC3DCF106 /* Feedback */,
 				BCEC37F5E5A7F8091B27BCE5 /* Game */,
@@ -215,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				C31368E91FEE7121CEB75C1B /* GameViewModelTests.swift */,
+				DC8EBE8E702EFF273E060ADA /* NoGuessModeTests.swift */,
+				D8C1E74D7E46C4FAE45FDBFB /* PauseKeyboardAccessibilityTests.swift */,
 				BB04EC600B575BCB24753D5C /* SettingsAndFeedbackTests.swift */,
 				D68335DC668FA8895A38664D /* StatisticsRecordingTests.swift */,
 			);
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				889A05F10221EBC30DF3E144 /* BoardMouseInput.swift */,
+				38ECF65A1304C961F8DA0AAF /* PauseOnDeactivate.swift */,
 				527B2680B810FFC2126E7E6C /* TrackpadHaptics.swift */,
 			);
 			path = macOS;
@@ -295,6 +307,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				en,
 				es,
 			);
 			mainGroup = 804943EE7EB99CFF85E3D4DF;
@@ -319,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				814A90C98634CE0B97887BC0 /* Assets.xcassets in Resources */,
+				C2732ACEFD46076D92CAA0D4 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +362,7 @@
 				5DFFCBC11BEA9F19D105C38A /* GameViewModel.swift in Sources */,
 				DE83A3E8D480ABA0C1540CB8 /* HeaderView.swift in Sources */,
 				8D6AA36D914B2D8AA40E0E5D /* MineSymbol.swift in Sources */,
+				1C8BF52DE208E5224DB19C60 /* PauseOnDeactivate.swift in Sources */,
 				972BABB769522C5B75BFB2EB /* SettingsView.swift in Sources */,
 				77F616BA032BA3D23ADDE487 /* SoundSynth.swift in Sources */,
 				E41BDBC289680DD7300AFC01 /* StatisticsStore.swift in Sources */,
@@ -364,6 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B428F6E0AAC8F1F52785F2B /* GameViewModelTests.swift in Sources */,
+				B35E67A98B1808FF6C06A2F7 /* NoGuessModeTests.swift in Sources */,
+				C41FCAA8B6B3F39587E09077 /* PauseKeyboardAccessibilityTests.swift in Sources */,
 				1678D6BD3DC1516AAA811DE8 /* SettingsAndFeedbackTests.swift in Sources */,
 				B07C7FBFA20160EACC3F27F3 /* StatisticsRecordingTests.swift in Sources */,
 			);
@@ -435,6 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 0.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -443,6 +461,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
 			};
@@ -534,6 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 0.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -541,6 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
 			};

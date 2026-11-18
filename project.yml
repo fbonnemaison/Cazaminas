@@ -13,6 +13,9 @@ options:
 settings:
   base:
     SWIFT_VERSION: "6.0"
+    # Localización con String Catalog (español base, inglés).
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
     # Firma ad hoc: sin cuenta de desarrollador de pago.
@@ -41,6 +44,7 @@ targets:
         LSApplicationCategoryType: public.app-category.puzzle-games
         LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
         NSHumanReadableCopyright: "© 2026 App-Zilla"
+        CFBundleLocalizations: [es, en]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.app-zilla.Cazaminas

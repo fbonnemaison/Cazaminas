@@ -77,7 +77,16 @@ struct BoardTheme: Equatable {
         mine: .dynamic(light: 0x1E2127, dark: 0xE3E6EB),
         flag: .red,
         numberWeight: .heavy,
-        numbers: [.blue, .green, .red, .indigo, .brown, .teal, .primary, .gray]
+        numbers: [
+            .dynamic(light: 0x1F5FD6, dark: 0x6EA8FF),
+            .dynamic(light: 0x1E7F3A, dark: 0x5AD47E),
+            .dynamic(light: 0xC62828, dark: 0xFF6B6B),
+            .dynamic(light: 0x4B3BC4, dark: 0xA99BFF),
+            .dynamic(light: 0x8F4510, dark: 0xE6A15C),
+            .dynamic(light: 0x0B727A, dark: 0x45D0D8),
+            .dynamic(light: 0x1E2127, dark: 0xE8EAED),
+            .dynamic(light: 0x5F6670, dark: 0xA0A6AF),
+        ]
     )
 
     static let flat = BoardTheme(
@@ -93,14 +102,14 @@ struct BoardTheme: Equatable {
         flag: .dynamic(light: 0xE5484D, dark: 0xFF6B6F),
         numberWeight: .bold,
         numbers: [
-            .dynamic(light: 0x3E7BFA, dark: 0x6EA0FF),
-            .dynamic(light: 0x2E9E5B, dark: 0x5CD18A),
-            .dynamic(light: 0xE5484D, dark: 0xFF7A7E),
-            .dynamic(light: 0x7C4DFF, dark: 0xA98BFF),
-            .dynamic(light: 0xC2570C, dark: 0xF09A55),
-            .dynamic(light: 0x0E9AA7, dark: 0x4FD1DC),
+            .dynamic(light: 0x2557CC, dark: 0x6EA0FF),
+            .dynamic(light: 0x1D7343, dark: 0x5CD18A),
+            .dynamic(light: 0xC2303A, dark: 0xFF7A7E),
+            .dynamic(light: 0x5B30D6, dark: 0xA98BFF),
+            .dynamic(light: 0x9A4708, dark: 0xF09A55),
+            .dynamic(light: 0x08707A, dark: 0x4FD1DC),
             .dynamic(light: 0x30343B, dark: 0xE8EAED),
-            .dynamic(light: 0x80868F, dark: 0xA0A6AF),
+            .dynamic(light: 0x5D636B, dark: 0xA0A6AF),
         ]
     )
 

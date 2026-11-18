@@ -65,35 +65,66 @@ public struct WinOutcome: Hashable, Sendable {
     public var isNewBest: Bool { rank == 1 }
 }
 
-/// Estadísticas de todas las partidas.
+/// Estadísticas de todas las partidas, separadas por modo de juego.
 public struct Statistics: Hashable, Sendable, Codable {
     /// Cuántos tiempos guarda cada tabla.
     public static let maxBestTimes = 10
 
+    /// Modo clásico. Conserva el nombre original para leer archivos antiguos.
     private var categories: [StatsCategory: CategoryStats] = [:]
+    /// Modo sin adivinar.
+    private var noGuessCategories: [StatsCategory: CategoryStats] = [:]
 
     public init() {}
 
-    public subscript(category: StatsCategory) -> CategoryStats {
-        categories[category] ?? CategoryStats()
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        categories = try container.decodeIfPresent([StatsCategory: CategoryStats].self, forKey: .categories) ?? [:]
+        noGuessCategories = try container.decodeIfPresent(
+            [StatsCategory: CategoryStats].self, forKey: .noGuessCategories
+        ) ?? [:]
+    }
+
+    public subscript(category: StatsCategory, mode: GameMode = .classic) -> CategoryStats {
+        get { storage(mode)[category] ?? CategoryStats() }
+        set {
+            switch mode {
+            case .classic: categories[category] = newValue
+            case .noGuess: noGuessCategories[category] = newValue
+            }
+        }
+    }
+
+    private func storage(_ mode: GameMode) -> [StatsCategory: CategoryStats] {
+        switch mode {
+        case .classic: categories
+        case .noGuess: noGuessCategories
+        }
     }
 
     /// `true` si nunca se ha registrado ninguna partida.
     public var isEmpty: Bool {
-        StatsCategory.allCases.allSatisfy { self[$0].played == 0 }
+        categories.values.allSatisfy { $0.played == 0 } && noGuessCategories.values.allSatisfy { $0.played == 0 }
     }
 
     /// Registra una victoria y devuelve su posición en la tabla de tiempos.
+    /// - Parameter countsForBestTimes: `false` si la partida se ganó con ayuda (pistas).
     @discardableResult
-    public mutating func recordWin(in category: StatsCategory, seconds: Double, date: Date) -> WinOutcome {
-        var stats = self[category]
+    public mutating func recordWin(
+        in category: StatsCategory,
+        mode: GameMode = .classic,
+        seconds: Double,
+        date: Date,
+        countsForBestTimes: Bool = true
+    ) -> WinOutcome {
+        var stats = self[category, mode]
         stats.played += 1
         stats.won += 1
         stats.currentStreak += 1
         stats.bestStreak = max(stats.bestStreak, stats.currentStreak)
 
         var rank: Int?
-        if category.tracksBestTimes {
+        if category.tracksBestTimes, countsForBestTimes {
             // Empates: el tiempo más antiguo va primero.
             let index = stats.bestTimes.firstIndex { seconds < $0.seconds } ?? stats.bestTimes.endIndex
             if index < Self.maxBestTimes {
@@ -103,24 +134,31 @@ public struct Statistics: Hashable, Sendable, Codable {
             }
         }
 
-        categories[category] = stats
+        self[category, mode] = stats
         return WinOutcome(seconds: seconds, rank: rank)
     }
 
     /// Registra una derrota (o una partida abandonada a medias).
-    public mutating func recordLoss(in category: StatsCategory) {
-        var stats = self[category]
+    public mutating func recordLoss(in category: StatsCategory, mode: GameMode = .classic) {
+        var stats = self[category, mode]
         stats.played += 1
         stats.currentStreak = 0
-        categories[category] = stats
+        self[category, mode] = stats
     }
 
-    /// Borra las estadísticas de una categoría, o de todas.
-    public mutating func reset(_ category: StatsCategory? = nil) {
-        if let category {
-            categories[category] = nil
-        } else {
-            categories.removeAll()
+    /// Borra las estadísticas de una categoría (o de todas) en un modo (o en los dos).
+    public mutating func reset(_ category: StatsCategory? = nil, mode: GameMode? = nil) {
+        for current in GameMode.allCases where mode == nil || mode == current {
+            if let category {
+                self[category, current] = CategoryStats()
+            } else {
+                switch current {
+                case .classic: categories.removeAll()
+                case .noGuess: noGuessCategories.removeAll()
+                }
+            }
         }
+        categories = categories.filter { $0.value.played > 0 }
+        noGuessCategories = noGuessCategories.filter { $0.value.played > 0 }
     }
 }

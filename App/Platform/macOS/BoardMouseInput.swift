@@ -43,6 +43,9 @@ struct BoardMouseInput: NSViewRepresentable {
 
         override var isFlipped: Bool { true }
 
+        /// Invisible para VoiceOver: las casillas SwiftUI ya son accesibles.
+        override func isAccessibilityElement() -> Bool { false }
+
         /// Responder al primer clic aunque la ventana no esté activa.
         override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
 

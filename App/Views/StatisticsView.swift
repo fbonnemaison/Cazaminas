@@ -8,9 +8,10 @@ struct StatisticsView: View {
     let model: GameViewModel
 
     @State private var category: StatsCategory = .beginner
+    @State private var mode: GameMode = .classic
     @State private var isConfirmingReset = false
 
-    private var stats: CategoryStats { model.statistics[category] }
+    private var stats: CategoryStats { model.statistics[category, mode] }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -21,6 +22,15 @@ struct StatisticsView: View {
             }
             .pickerStyle(.segmented)
             .labelsHidden()
+
+            Picker("Modo", selection: $mode) {
+                ForEach(GameMode.allCases) { mode in
+                    Text(mode.title).tag(mode)
+                }
+            }
+            .pickerStyle(.segmented)
+            .labelsHidden()
+            .fixedSize()
 
             summary
 
@@ -39,12 +49,17 @@ struct StatisticsView: View {
         }
         .padding(20)
         .frame(width: 500)
-        .onAppear { category = model.statsCategory }
+        .onAppear {
+            category = model.statsCategory
+            mode = model.mode
+        }
         .confirmationDialog(
             "¿Restablecer las estadísticas?",
             isPresented: $isConfirmingReset
         ) {
-            Button("Solo \(category.title)", role: .destructive) { model.resetStatistics(category) }
+            Button("Solo \(category.title) · \(mode.title)", role: .destructive) {
+                model.resetStatistics(category, mode: mode)
+            }
             Button("Todas las dificultades", role: .destructive) { model.resetStatistics() }
         } message: {
             Text("Se borrarán partidas, rachas y mejores tiempos. No se puede deshacer.")

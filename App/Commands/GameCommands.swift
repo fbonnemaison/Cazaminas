@@ -6,6 +6,7 @@ import SwiftUI
 /// Menú «Juego» de la barra de menús. En iOS no se usa.
 struct GameCommands: Commands {
     let model: GameViewModel
+    let settings: AppSettings
 
     @Environment(\.openWindow) private var openWindow
 
@@ -33,6 +34,22 @@ struct GameCommands: Commands {
                 Text("Personalizado…")
             }
             .keyboardShortcut("4", modifiers: .command)
+
+            Divider()
+
+            Toggle("Sin adivinar", isOn: Binding(
+                get: { settings.noGuessMode },
+                set: { settings.noGuessMode = $0 }
+            ))
+            .keyboardShortcut("g", modifiers: .command)
+
+            Button(model.isPaused ? "Continuar" : "Pausar") { model.togglePause() }
+                .keyboardShortcut("p", modifiers: .command)
+                .disabled(!model.canPause && !model.isPaused)
+
+            Button("Pista") { model.showHint() }
+                .keyboardShortcut("j", modifiers: .command)
+                .disabled(model.status.isOver || model.isGenerating)
 
             Divider()
 

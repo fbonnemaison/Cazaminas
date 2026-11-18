@@ -14,6 +14,10 @@ Juego de lógica para un jugador para macOS: despeja una cuadrícula de casillas
 - **Dificultad:** menú «Juego» › Principiante (⌘1), Intermedio (⌘2), Experto (⌘3) o Personalizado… (⌘4). Se recuerda la última elegida.
 - **Victoria:** abre todas las casillas seguras del tablero, en el menor tiempo posible.
 - **Ajustes (⌘,):** marca «?», sonido, respuesta háptica (trackpad Force Touch), tema (Relieve, Plano, Alto contraste) y tamaño de casilla.
+- **Sin adivinar (⌘G):** tableros que siempre se pueden resolver con lógica desde el primer clic, con sus propios récords.
+- **Pista (⌘J):** resalta una casilla segura (verde) o una mina (naranja). Ganar con pistas no cuenta para la tabla de récords.
+- **Teclado:** flechas para moverse, Espacio destapa, F pone bandera e Intro hace chording.
+- **Pausa (⌘P):** también automática al cambiar de app o minimizar; el tablero se oculta y el tiempo se detiene.
 - **Zoom:** menú «Visualización» › Ampliar (⌘+), Reducir (⌘−) o Tamaño normal (⌘0).
 - **Estadísticas:** menú «Juego» › Estadísticas… (⌘⇧S): partidas, % de victorias, rachas y los 10 mejores tiempos de cada nivel. Abandonar una partida empezada cuenta como derrota.
 
@@ -29,6 +33,7 @@ Juego de lógica para un jugador para macOS: despeja una cuadrícula de casillas
 | `CazaminasCore/` | Paquete Swift con la lógica del juego, sin interfaz (macOS e iOS). |
 | `App/` | App de macOS en SwiftUI. El código exclusivo de Mac vive en `App/Platform/macOS/`. |
 | `AppTests/` | Tests de la capa de presentación (`GameViewModel`). |
+| `Tools/Contrast/` | Comprobación del contraste de los números de cada tema. |
 | `Tools/AppIcon/` | Script que dibuja el icono de la app: `swift Tools/AppIcon/make-icon.swift App/Assets.xcassets/AppIcon.appiconset`. |
 | `project.yml` | Definición del proyecto de Xcode para XcodeGen. |
 
@@ -48,6 +53,16 @@ Tests del motor del juego:
 
 ```bash
 swift test --package-path CazaminasCore
+```
+
+## Idiomas y accesibilidad
+
+- La app está en español e inglés y sigue el idioma del sistema. Las traducciones están en `App/Localizable.xcstrings` (ábrelo en Xcode para editarlas).
+- Funciona con VoiceOver: cada casilla describe su estado y se puede destapar o marcar con las acciones de VoiceOver.
+- Respeta «Reducir movimiento» del sistema. Para comprobar el contraste de los temas:
+
+```bash
+python3 Tools/Contrast/check-contrast.py
 ```
 
 ## Abrir la app la primera vez

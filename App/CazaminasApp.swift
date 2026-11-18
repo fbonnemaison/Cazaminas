@@ -18,7 +18,7 @@ struct CazaminasApp: App {
         }
         .windowResizability(.contentSize)
         .commands {
-            GameCommands(model: services.model)
+            GameCommands(model: services.model, settings: services.settings)
             ZoomCommands(settings: services.settings)
         }
 

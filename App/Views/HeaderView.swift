@@ -10,6 +10,8 @@ struct HeaderView: View {
         HStack {
             CounterView(systemImage: "flag.fill", value: model.remainingMines)
                 .help("Minas restantes")
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text("Minas restantes: \(model.remainingMines)"))
             Spacer(minLength: 12)
             Button {
                 model.newGame()
@@ -28,6 +30,8 @@ struct HeaderView: View {
             Spacer(minLength: 12)
             timer
                 .help("Tiempo")
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text("Tiempo: \(model.elapsedSeconds(at: .now)) segundos"))
         }
     }
 
