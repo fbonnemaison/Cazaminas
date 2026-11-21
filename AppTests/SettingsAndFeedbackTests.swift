@@ -35,6 +35,7 @@ struct SettingsTests {
         #expect(settings.soundEnabled)
         #expect(settings.hapticsEnabled)
         #expect(settings.theme == .relief)
+        #expect(settings.graphicsStyle == .hd)
         #expect(settings.cellSize == 28)
     }
 
@@ -46,6 +47,7 @@ struct SettingsTests {
         settings.allowsQuestionMarks = false
         settings.soundEnabled = false
         settings.theme = .highContrast
+        settings.graphicsStyle = .pixel
         settings.zoomIn()
 
         let reopened = AppSettings(defaults: defaults)
@@ -53,6 +55,7 @@ struct SettingsTests {
         #expect(!reopened.soundEnabled)
         #expect(reopened.hapticsEnabled)
         #expect(reopened.theme == .highContrast)
+        #expect(reopened.graphicsStyle == .pixel)
         #expect(reopened.cellSize == 32)
     }
 
@@ -64,6 +67,7 @@ struct SettingsTests {
         defaults.set(31.0, forKey: AppSettings.Key.cellSize)
         let settings = AppSettings(defaults: defaults)
         #expect(settings.theme == .relief)
+        #expect(settings.graphicsStyle == .hd)
         #expect(settings.cellSize == 28)
     }
 

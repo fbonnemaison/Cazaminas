@@ -282,6 +282,16 @@
         }
       }
     },
+    "Estilo gráfico": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graphics style"
+          }
+        }
+      }
+    },
     "Experto": {
       "localizations": {
         "en": {
@@ -324,6 +334,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Generating a no-guess board…"
+          }
+        }
+      }
+    },
+    "HD": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HD"
           }
         }
       }
@@ -554,6 +574,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hint"
+          }
+        }
+      }
+    },
+    "Pixel art": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pixel art"
           }
         }
       }

@@ -9,6 +9,8 @@ struct CellView: View, Equatable {
     let appearance: CellAppearance
     let size: CGFloat
     let theme: BoardTheme
+    /// HD (vectorial) o pixel art.
+    var style: GraphicsStyle = .hd
     /// Si se anima el cambio de estado (desactivado con «Reducir movimiento»).
     var animated: Bool = true
     /// Retraso de la animación, para la onda de la cascada.
@@ -20,13 +22,18 @@ struct CellView: View, Equatable {
 
     var body: some View {
         ZStack {
-            background
-            content
+            if style.isPixel {
+                pixelBackground
+                pixelContent
+            } else {
+                background
+                content
+            }
             if let hint {
-                HintMarker(kind: hint, size: size, animated: animated)
+                HintMarker(kind: hint, size: size, animated: animated, square: style.isPixel)
             }
             if isCursor {
-                RoundedRectangle(cornerRadius: size * 0.18, style: .continuous)
+                RoundedRectangle(cornerRadius: style.isPixel ? 0 : size * 0.18, style: .continuous)
                     .strokeBorder(Color.accentColor, lineWidth: max(2, size * 0.09))
                     .allowsHitTesting(false)
             }
@@ -94,6 +101,53 @@ struct CellView: View, Equatable {
         }
     }
 
+    // MARK: - Pixel art
+
+    @ViewBuilder
+    private var pixelBackground: some View {
+        if isCovered {
+            PixelArtView(sprite: PixelSprites.covered, palette: [
+                "B": theme.cellCovered,
+                "H": .white.opacity(0.55),
+                "S": .black.opacity(0.32),
+            ])
+            .background(theme.cellCovered)
+        } else {
+            let fill = appearance == .detonatedMine ? theme.detonated : theme.cellRevealed
+            PixelArtView(sprite: PixelSprites.revealed, palette: [
+                "B": fill,
+                "G": theme.boardBackground,
+            ])
+        }
+    }
+
+    @ViewBuilder
+    private var pixelContent: some View {
+        switch appearance {
+        case .covered, .pressed, .empty:
+            EmptyView()
+        case .number(let number):
+            PixelArtView(sprite: PixelSprites.number(number), palette: ["N": theme.numberColor(number)])
+                .transition(.opacity)
+        case .flagged:
+            PixelArtView(sprite: PixelSprites.flag, palette: ["F": theme.flag, "P": theme.mine])
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+        case .questioned:
+            PixelArtView(sprite: PixelSprites.question, palette: ["Q": .secondary])
+                .transition(.opacity)
+        case .mine, .detonatedMine:
+            PixelArtView(sprite: PixelSprites.mine, palette: ["M": theme.mine, "W": .white])
+                .transition(.opacity)
+        case .wrongFlag:
+            ZStack {
+                PixelArtView(sprite: PixelSprites.mine, palette: ["M": theme.mine, "W": .white])
+                    .opacity(0.35)
+                PixelArtView(sprite: PixelSprites.cross, palette: ["X": theme.flag])
+            }
+            .transition(.opacity)
+        }
+    }
+
     // MARK: - Contenido
 
     @ViewBuilder
@@ -143,9 +197,11 @@ private struct HintMarker: View {
     let kind: Hint.Kind
     let size: CGFloat
     let animated: Bool
+    /// Esquinas rectas (pixel art).
+    var square = false
 
     var body: some View {
-        let shape = RoundedRectangle(cornerRadius: size * 0.2, style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: square ? 0 : size * 0.2, style: .continuous)
         let color: Color = kind == .safe ? .green : .orange
         let style = StrokeStyle(lineWidth: max(2, size * 0.1), dash: kind == .mine ? [size * 0.18, size * 0.1] : [])
         Group {
@@ -171,14 +227,16 @@ private struct HintMarker: View {
         .mine, .detonatedMine, .wrongFlag,
     ]
     VStack(spacing: 8) {
-        ForEach(ThemeID.allCases) { id in
-            HStack(spacing: 0) {
-                ForEach(Array(samples.enumerated()), id: \.offset) { _, appearance in
-                    CellView(appearance: appearance, size: 28, theme: id.theme)
+        ForEach(GraphicsStyle.allCases) { style in
+            ForEach(ThemeID.allCases) { id in
+                HStack(spacing: 0) {
+                    ForEach(Array(samples.enumerated()), id: \.offset) { _, appearance in
+                        CellView(appearance: appearance, size: 28, theme: id.theme, style: style)
+                    }
                 }
+                .padding(4)
+                .background(id.theme.boardBackground)
             }
-            .padding(4)
-            .background(id.theme.boardBackground)
         }
     }
     .padding()

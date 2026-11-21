@@ -13,8 +13,13 @@ struct GameView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            HeaderView(model: model)
-            BoardView(model: model, theme: settings.theme.theme, cellSize: settings.cellSize)
+            HeaderView(model: model, style: settings.graphicsStyle)
+            BoardView(
+                model: model,
+                theme: settings.theme.theme,
+                style: settings.graphicsStyle,
+                cellSize: settings.cellSize
+            )
             statusLine
         }
         .padding(16)

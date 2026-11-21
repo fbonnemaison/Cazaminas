@@ -5,6 +5,16 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
 
 Autor: App-Zilla.
 
+## [1.1.0] - 2026-11-21
+
+### Añadido
+
+- Estilo gráfico **Pixel art**, a elegir en Ajustes › Apariencia junto al estilo actual, que pasa a llamarse **HD**. Casillas con relieve, números, banderas, «?» y minas dibujados en pixel art de 16 × 16 con los colores del tema elegido, tablero de esquinas rectas y contadores con la fuente Public Pixel (CC0).
+
+### Cambiado
+
+- Nuevo icono de la app: mina pixel art sobre fondo azul y violeta.
+
 ## [1.0.0] - 2026-11-17
 
 Primera versión.
@@ -42,4 +52,5 @@ Primera versión.
 - App universal (Apple Silicon e Intel) para macOS 15 o posterior, con firma ad hoc y sin notarizar.
 - `.dmg` y `.zip` con sumas SHA-256, publicados automáticamente con GitHub Actions.
 
+[1.1.0]: ../../releases/tag/v1.1.0
 [1.0.0]: ../../releases/tag/v1.0.0

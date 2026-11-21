@@ -16,6 +16,7 @@ final class AppSettings {
         static let soundEnabled = "soundEnabled"
         static let hapticsEnabled = "hapticsEnabled"
         static let theme = "theme"
+        static let graphicsStyle = "graphicsStyle"
         static let cellSize = "cellSize"
         static let noGuessMode = "noGuessMode"
     }
@@ -42,6 +43,11 @@ final class AppSettings {
         didSet { defaults?.set(theme.rawValue, forKey: Key.theme) }
     }
 
+    /// HD (vectorial) o pixel art.
+    var graphicsStyle: GraphicsStyle {
+        didSet { defaults?.set(graphicsStyle.rawValue, forKey: Key.graphicsStyle) }
+    }
+
     /// Lado de una casilla en puntos (uno de `cellSizes`).
     private(set) var cellSize: Double {
         didSet { defaults?.set(cellSize, forKey: Key.cellSize) }
@@ -57,6 +63,7 @@ final class AppSettings {
         soundEnabled = defaults?.object(forKey: Key.soundEnabled) as? Bool ?? true
         hapticsEnabled = defaults?.object(forKey: Key.hapticsEnabled) as? Bool ?? true
         theme = defaults?.string(forKey: Key.theme).flatMap(ThemeID.init(rawValue:)) ?? .relief
+        graphicsStyle = defaults?.string(forKey: Key.graphicsStyle).flatMap(GraphicsStyle.init(rawValue:)) ?? .hd
         let storedSize = defaults?.object(forKey: Key.cellSize) as? Double ?? Self.defaultCellSize
         cellSize = Self.cellSizes.contains(storedSize) ? storedSize : Self.defaultCellSize
     }

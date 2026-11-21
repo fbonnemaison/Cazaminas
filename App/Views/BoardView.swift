@@ -10,6 +10,7 @@ import SwiftUI
 struct BoardView: View {
     let model: GameViewModel
     let theme: BoardTheme
+    var style: GraphicsStyle = .hd
     let cellSize: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -32,7 +33,7 @@ struct BoardView: View {
         .overlay { input(for: configuration) }
         .overlay { if model.isPaused { pauseCover } }
         .padding(6)
-        .background(theme.boardBackground, in: .rect(cornerRadius: 10, style: .continuous))
+        .background(theme.boardBackground, in: .rect(cornerRadius: style.isPixel ? 0 : 10, style: .continuous))
         // Sacudida al perder.
         .modifier(ShakeEffect(animatableData: reduceMotion ? 0 : CGFloat(model.lossCount)))
         .animation(reduceMotion ? nil : .linear(duration: 0.45), value: model.lossCount)
@@ -51,6 +52,7 @@ struct BoardView: View {
             appearance: model.appearance(at: position),
             size: cellSize,
             theme: theme,
+            style: style,
             animated: !reduceMotion,
             delay: reduceMotion ? 0 : model.revealDelay(at: position),
             hint: model.hintKind(at: position),

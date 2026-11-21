@@ -11,6 +11,10 @@ enum WindowID {
 struct CazaminasApp: App {
     @State private var services = AppServices()
 
+    init() {
+        PixelFont.register()
+    }
+
     var body: some Scene {
         // Una sola ventana de juego: ⌘N queda libre para «Nueva partida».
         Window("Cazaminas", id: WindowID.main) {

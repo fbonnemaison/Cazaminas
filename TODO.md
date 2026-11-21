@@ -114,7 +114,8 @@ Para que añadir iOS más adelante sea añadir un destino y no reescribir la app
 - [x] Control completo por teclado: flechas mueven el cursor, Espacio destapa, F marca, Intro hace chording.
 - [x] Contraste de los números ≥ 4,5:1 (WCAG AA) en todos los temas, claro y oscuro (`Tools/Contrast/check-contrast.py`). La pista de mina es discontinua para no depender solo del color.
 - [x] Localización: español (base) e inglés con String Catalog (`App/Localizable.xcstrings`).
-- [x] Icono de la app original (generado con `Tools/AppIcon/make-icon.swift`).
+- [x] Icono de la app original (generado con `Tools/AppIcon/make-icon.swift` a partir de `Design/AppIcon-source.png`).
+- [x] Estilos gráficos HD y Pixel art (sprites propios en `App/Views/PixelArt.swift`, fuente Public Pixel CC0).
 - [x] Pausa al cambiar de app o minimizar (y manual con ⌘P), ocultando el tablero; el tiempo en pausa no cuenta.
 
 ## Fase 8 — Distribución

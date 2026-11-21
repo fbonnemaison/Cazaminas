@@ -5,10 +5,11 @@ import SwiftUI
 /// Barra superior: minas restantes, botón de nueva partida y cronómetro.
 struct HeaderView: View {
     let model: GameViewModel
+    var style: GraphicsStyle = .hd
 
     var body: some View {
         HStack {
-            CounterView(systemImage: "flag.fill", value: model.remainingMines)
+            CounterView(systemImage: "flag.fill", value: model.remainingMines, style: style)
                 .help("Minas restantes")
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(Text("Minas restantes: \(model.remainingMines)"))
@@ -39,10 +40,10 @@ struct HeaderView: View {
     private var timer: some View {
         if model.isTimerRunning {
             TimelineView(.periodic(from: model.startDate ?? .now, by: 1)) { context in
-                CounterView(systemImage: "timer", value: model.elapsedSeconds(at: context.date))
+                CounterView(systemImage: "timer", value: model.elapsedSeconds(at: context.date), style: style)
             }
         } else {
-            CounterView(systemImage: "timer", value: model.elapsedSeconds(at: .now))
+            CounterView(systemImage: "timer", value: model.elapsedSeconds(at: .now), style: style)
         }
     }
 
@@ -68,11 +69,14 @@ struct HeaderView: View {
 struct CounterView: View {
     let systemImage: String
     let value: Int
+    var style: GraphicsStyle = .hd
 
     var body: some View {
         Label {
             Text(formatted)
-                .font(.system(size: 18, weight: .semibold, design: .rounded).monospacedDigit())
+                .font(style.isPixel
+                    ? PixelFont.font(size: 15)
+                    : .system(size: 18, weight: .semibold, design: .rounded).monospacedDigit())
                 .contentTransition(.numericText(value: Double(value)))
         } icon: {
             Image(systemName: systemImage)
@@ -81,7 +85,7 @@ struct CounterView: View {
         .labelStyle(.titleAndIcon)
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
-        .background(.quaternary, in: .capsule)
+        .background(.quaternary, in: style.isPixel ? AnyShape(.rect) : AnyShape(.capsule))
     }
 
     /// Tres cifras con ceros a la izquierda; los negativos se muestran como «-01».

@@ -13,7 +13,8 @@ Juego de lógica para un jugador para macOS: despeja una cuadrícula de casillas
 - Modo **sin adivinar**: tableros que siempre se pueden resolver solo con lógica.
 - **Pistas** que señalan la siguiente jugada deducible.
 - **Estadísticas** y los 10 mejores tiempos de cada nivel y modo.
-- Tres **temas** (Relieve, Plano y Alto contraste) en modo claro y oscuro, y **zoom** del tablero.
+- Dos **estilos gráficos**: **HD** (vectorial y suave) y **Pixel art** (casillas, números, banderas y minas de 16 × 16 píxeles, y contadores con fuente pixel).
+- Tres **temas** (Relieve, Plano y Alto contraste) en modo claro y oscuro, combinables con cualquier estilo, y **zoom** del tablero.
 - **Sonidos** sintetizados y **respuesta háptica** en trackpads Force Touch.
 - Accesible: **VoiceOver**, control completo por **teclado**, contraste AA y respeto de «Reducir movimiento».
 - En **español** e **inglés**.
@@ -103,7 +104,8 @@ shasum -a 256 -c SHA256SUMS.txt
 | `CazaminasCore/` | Paquete Swift con la lógica del juego, sin interfaz (macOS e iOS): tablero, reglas, solucionador, generador y estadísticas. |
 | `App/` | App de macOS en SwiftUI. El código exclusivo de Mac vive en `App/Platform/macOS/`. |
 | `AppTests/` | Tests de la capa de presentación (`GameViewModel`, ajustes, sonido, teclado y accesibilidad). |
-| `Tools/AppIcon/` | Script que dibuja el icono de la app. |
+| `Design/` | Ilustración original del icono (`AppIcon-source.png`). |
+| `Tools/AppIcon/` | Script que genera el icono de la app a partir de la ilustración. |
 | `Tools/Contrast/` | Comprobación del contraste de los números de cada tema. |
 | `Tools/Release/` | Script que compila y empaqueta una versión. |
 | `project.yml` | Definición del proyecto de Xcode para XcodeGen. |
@@ -138,10 +140,10 @@ Contraste de los temas:
 python3 Tools/Contrast/check-contrast.py
 ```
 
-Icono de la app (tras cambiar el script):
+Icono de la app (tras cambiar la ilustración o el script):
 
 ```bash
-swift Tools/AppIcon/make-icon.swift App/Assets.xcassets/AppIcon.appiconset
+swift Tools/AppIcon/make-icon.swift Design/AppIcon-source.png App/Assets.xcassets/AppIcon.appiconset
 ```
 
 ### Idiomas
@@ -166,4 +168,4 @@ El plan de desarrollo por fases está en [TODO.md](TODO.md).
 
 ## Licencia
 
-[MIT](LICENSE) © 2026 App-Zilla
+[MIT](LICENSE) © 2026 App-Zilla. Los recursos de terceros y sus licencias están en [CREDITS.md](CREDITS.md).

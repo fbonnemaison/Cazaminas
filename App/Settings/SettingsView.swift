@@ -33,7 +33,13 @@ struct SettingsView: View {
                         Text(theme.title).tag(theme)
                     }
                 }
-                ThemePreview(theme: settings.theme.theme)
+                Picker("Estilo gráfico", selection: $settings.graphicsStyle) {
+                    ForEach(GraphicsStyle.allCases) { style in
+                        Text(style.title).tag(style)
+                    }
+                }
+                .pickerStyle(.segmented)
+                ThemePreview(theme: settings.theme.theme, style: settings.graphicsStyle)
                 LabeledContent("Tamaño de casilla") {
                     HStack {
                         Button {
@@ -68,6 +74,7 @@ struct SettingsView: View {
 /// Muestra de casillas con el tema elegido.
 private struct ThemePreview: View {
     let theme: BoardTheme
+    let style: GraphicsStyle
 
     private let samples: [CellAppearance] = [
         .covered, .flagged, .questioned, .empty, .number(1), .number(2),
@@ -77,11 +84,11 @@ private struct ThemePreview: View {
     var body: some View {
         HStack(spacing: 0) {
             ForEach(Array(samples.enumerated()), id: \.offset) { _, appearance in
-                CellView(appearance: appearance, size: 28, theme: theme, animated: false)
+                CellView(appearance: appearance, size: 28, theme: theme, style: style, animated: false)
             }
         }
         .padding(5)
-        .background(theme.boardBackground, in: .rect(cornerRadius: 8, style: .continuous))
+        .background(theme.boardBackground, in: .rect(cornerRadius: style.isPixel ? 0 : 8, style: .continuous))
         .frame(maxWidth: .infinity)
         .accessibilityHidden(true)
     }
